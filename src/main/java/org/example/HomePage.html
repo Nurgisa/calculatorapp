@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+	<head>
+		<meta charset="utf-8" />
+		<title>Credit calculator</title>
+		<style>
+			table, th, td {
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+	<!--<a wicket:id = "linkId">Form page</a>-->
+    <form wicket:id="form">
+        <span wicket:id = "startDateSpan">Дата выдачи кредита: </span>
+        <input type="text" wicket:id = "startDate"/><br>
+        <span wicket:id = "monthCntSpan"></span>
+        <input type="text" wicket:id = "monthCnt"/><br>
+        <span wicket:id = "creditSumSpan"></span>
+        <input type="text" wicket:id = "creditSum"/><br>
+        <span wicket:id = "percentSpan">Процентная ставка:</span>
+        <input type="text" wicket:id = "percent"/><br>
+        <input type="submit" wicket:id = "submitButton" value="Рассчитать"/>
+
+    </form>
+
+	<h3>График погашения:</h3>
+	<table border="1">
+		<tr >
+			<th>№</th>
+			<th>Дата платежа</th>
+			<th>Количество дней</th>
+			<th>Сумма погашения ОД</th>
+			<th>Начисленные проценты</th>
+			<th>Остаток ОД</th>
+			<th>Сумма платежа</th>
+		</tr>
+		<tr wicket:id="timeTable">
+			<td wicket:id="number"></td>
+			<td wicket:id="date"></td>
+			<td wicket:id="countOfDay"></td>
+			<td wicket:id="debtPayment"></td>
+			<td wicket:id="percentPayment"></td>
+			<td wicket:id="remains"></td>
+			<td wicket:id="monthlyPayment"></td>
+		</tr>
+	</table>
+	</body>
+</html>
